@@ -20,8 +20,8 @@ python3 --version
 sudo apt install unzip curl -y
 
 # Download and extract cot-gen
-cd /tmp/Cot-Generation-Broadcast/cot-gen 
-ls -la 
+cd /tmp/CoT-Generation-Broadcast/cot-gen
+ls -la
 cp cot-gen.zip /opt
 cp /opt/
 unzip cot-gen.zip 
