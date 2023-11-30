@@ -57,8 +57,8 @@ fi
 
 # Run script and validate download
 cd /opt/cot-gen/cot-gen/csv
+chmod +x csv-download.sh
 ./csv-download.sh
-cd csv
 ls -la 
 
 read -p "Is the mission-data.csv file present in this directory? (y/n) " confirm
