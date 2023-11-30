@@ -56,7 +56,7 @@ elif [[ $choice == "2" ]]; then
 fi
 
 # Run script and validate download
-cd /opt/cot-gen/cot-gen
+cd /opt/cot-gen/cot-gen/csv
 ./csv-download.sh
 cd csv
 ls -la 
