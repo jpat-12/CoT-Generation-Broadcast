@@ -20,10 +20,11 @@ python3 --version
 sudo apt install unzip curl -y
 
 # Download and extract cot-gen
-curl -L -o /tmp/cot-gen.zip https://example.com/cot-gen.zip
-unzip /tmp/cot-gen.zip -d /opt
-
-
+cd /tmp/Cot-Generation-Broadcast/cot-gen 
+ls -la 
+cp cot-gen.zip /opt
+cp /opt/
+unzip cot-gen.zip 
 cd /opt/cot-gen
 
 # Prompt for file ID
