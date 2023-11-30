@@ -19,6 +19,8 @@ python3 --version
 
 # Install required packages
 sudo apt install unzip curl -y
+sudo apt intstall pip 
+pip install pandas
 
 # Download and extract cot-gen
 cd /tmp/CoT-Generation-Broadcast/cot-gen
@@ -27,6 +29,8 @@ cp cot-gen.zip /opt
 cd /opt/
 unzip cot-gen.zip 
 cd /opt/cot-gen/cot-gen
+chmod +x /opt/cot-gen/*
+
 
 # Prompt for file ID
 read -p "Please enter your File ID: " fileid
