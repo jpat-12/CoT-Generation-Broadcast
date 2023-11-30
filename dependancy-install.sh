@@ -19,7 +19,7 @@ python3 --version
 
 # Install required packages
 sudo apt install unzip curl -y
-sudo apt intstall pip 
+sudo apt intstall python3-pip 
 pip install pandas
 
 # Download and extract cot-gen
