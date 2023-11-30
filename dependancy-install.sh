@@ -22,7 +22,7 @@ sudo apt install unzip curl -y
 # Download and extract cot-gen
 curl -L -o /tmp/cot-gen.zip https://example.com/cot-gen.zip
 unzip /tmp/cot-gen.zip -d /opt
-rm /tmp/cot-gen.zip
+
 
 cd /opt/cot-gen
 
