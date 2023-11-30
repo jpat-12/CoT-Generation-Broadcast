@@ -76,14 +76,29 @@ python3 convert-csv.py
  # Error validator 
   echo "Were there any errors (y/n)"
   read pythonerror
-  
-  # Open CSV download script
-  if [[ $pythonerror == "y" ]]; then
-    #INSERT TROUBLESHOOTING HERE
-  elif [[ $pythonerror == "n" ]]; then  
-    
-  fi
+# Open CSV download script
+    if [[ $pythonerror == "y" ]]; then
+        # Troubleshooting steps for Python error
+        echo "Python error encountered. Performing troubleshooting steps..."
+        
+        # Insert your troubleshooting steps here
+        # For example:
+        # 1. Check if Python is installed
+        # 2. Verify the required libraries are installed
+        # 3. Check the Python script for syntax errors
 
+        # End of troubleshooting steps
+    elif [[ $pythonerror == "n" ]]; then
+        # Continue with the rest of the script when there is no Python error
+        
+        # Insert your CSV download code here
+        # For example:
+        # python your_script.py
+
+        # Additional code for handling the downloaded CSV data
+
+        echo "CSV download completed successfully."
+    fi
 
 
 #INSERT NODE RED HERER
