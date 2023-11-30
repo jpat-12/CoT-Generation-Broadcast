@@ -23,7 +23,7 @@ sudo apt install unzip curl -y
 cd /tmp/CoT-Generation-Broadcast/cot-gen
 ls -la
 cp cot-gen.zip /opt
-cp /opt/
+cd /opt/
 unzip cot-gen.zip 
 cd /opt/cot-gen
 
