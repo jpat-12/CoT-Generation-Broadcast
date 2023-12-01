@@ -183,7 +183,6 @@ if [[ $node == "y" ]]; then
 
   #click okay 
   #sudo npm install -g --unsafe-perm node-red
-  udw allow 1880
   #click okay 
   #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -198,7 +197,7 @@ if [[ $node == "y" ]]; then
   sudo npm install -g --unsafe-perm node-red
   sleep 20
   echo "proceed to https://localhost:1880"
-  udw allow 1880
+  ufw allow 1880
     # INSERT TROUBLESHOOTING HERE
 elif [[ $node == "n" ]]; then  
   # Handle the case when node-red installation is not needed

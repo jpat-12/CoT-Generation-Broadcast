@@ -17,6 +17,14 @@ cd /opt/cot-gen
 
 ## Install ##
 Follow all prompts etc
+Centos/RedHat
+```
+sudo yum install git
+```
+Ubuntu/Debian
+```
+sudo apt install git
+```
 ```
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x dependancy-install.sh && ./dependancy-install.sh
 ```
