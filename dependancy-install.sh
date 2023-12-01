@@ -60,9 +60,9 @@ if [[ $choice == "y" ]]; then
       vi /opt/cot-gen/convert-csv.py
     fi
    # If the Absolute File Path is wrong than exit the script
-  elif [[ $pathyn == "n" ]]; then  
-    exit
-  fi
+elif [[ $pathyn == "n" ]]; then  
+  exit
+fi
 
 
 #If Apache2/an eqivelent is not installed then install apache2 
