@@ -41,25 +41,30 @@ read choice
 
 #If Yes Than
 if [[ $choice == "y" ]]; then
-  nano /opt/cot-gen/csv-download.sh
-  read -p "what is the absolute file path to the directory that Apache2 uses. (Do not enter the default path)(I.E. Apache2's Default is /var/www/html) " Absolute_path
-  echo "Is $Absolute_path the right path to update? (y/n) "
-  read pathyn
-  if [[ $pathyn == "y" ]]; then
-      #change the absolute file path if apache is already installed
-      sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" /opt/cot-gen/convert-csv.py
-      #Verify Changes to output file path in convert-csv.py 
-      echo "Do you use Nano (1) or Vim (2)"
-      read nv
-      if [[ $nv == "1" ]]; then
-        nano /opt/cot-gen/convert-csv.py
-      elif [[ $nv == "2" ]]; then  
-       vi /opt/cot-gen/convert-csv.py
-      fi
-     # If the Absolute File Path is wrong than exit the script
-    elif [[ $pathyn == "n" ]]; then  
-      exit
-   fi
+   
+  echo "Are you useing the default absolute file directory (/var/www/html) (y/n)"
+  read pls
+  if [[ $pls == "y" ]]; then
+  elif [[ $choice == "n" ]]; then  
+        read -p "what is the absolute file path to the directory that Apache2 uses. (Do not enter the default path)(I.E. Apache2's Default is /var/www/html) " Absolute_path
+        echo "Is $Absolute_path the right path to update? (y/n) "
+        read pathyn
+        if [[ $pathyn == "y" ]]; then
+            #change the absolute file path if apache is already installed
+            sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" /opt/cot-gen/convert-csv.py
+            #Verify Changes to output file path in convert-csv.py 
+            echo "Do you use Nano (1) or Vim (2)"
+            read nv
+            if [[ $nv == "1" ]]; then
+                nano /opt/cot-gen/convert-csv.py
+            elif [[ $nv == "2" ]]; then  
+            vi /opt/cot-gen/convert-csv.py
+            fi
+            # If the Absolute File Path is wrong than exit the script
+            elif [[ $pathyn == "n" ]]; then  
+            exit
+        fi
+  fi
 fi
 
 
