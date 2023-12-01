@@ -45,6 +45,7 @@ if [[ $choice == "y" ]]; then
   echo "Are you useing the default absolute file directory (/var/www/html) (y/n)"
   read pls
   if [[ $pls == "y" ]]; then
+      echo "Moving on"
   elif [[ $pls == "n" ]]; then  
         read -p "what is the absolute file path to the directory that Apache2 uses. (Do not enter the default path)(I.E. Apache2's Default is /var/www/html) " Absolute_path
         echo "Is $Absolute_path the right path to update? (y/n) "
@@ -65,10 +66,10 @@ if [[ $choice == "y" ]]; then
             exit
         fi
   fi
-fi
 
 
-#If Apache2/an eqivelent is not installed then install apache2 
+
+  #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
   sudo apt install apache2
@@ -87,7 +88,7 @@ elif [[ $choice == "n" ]]; then
     echo "Press enter when ready to move on"
     read misc
   fi
-
+fi
 
 # Prompt for file ID
 read -p "Please enter your File ID: " fileid
