@@ -7,7 +7,7 @@ do
     ./csv-download.sh
 clear
     # Run kml-gen_icon_test.py
-    python3 /opt/cot-gen/cot-gen/convert-csv.py
+    python3 /opt/cot-gen/convert-csv.py
     echo "File Created"
 sleep 2
 clear

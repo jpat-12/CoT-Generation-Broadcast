@@ -160,12 +160,12 @@ read node
 # Open CSV download script
 if [[ $node == "y" ]]; then
   sudo apt install npm 
-  click okay 
+  #click okay 
   sudo npm install -g --unsafe-perm node-red
   echo "Now Launching Node Red" 
   echo "proceed to https://localhost:1880"
-  node-red
-  # INSERT TROUBLESHOOTING HERE
+  udw allow 1880
+    # INSERT TROUBLESHOOTING HERE
 elif [[ $node == "n" ]]; then  
   # Handle the case when node-red installation is not needed
   echo "Node-Red installation skipped."
@@ -174,5 +174,18 @@ fi
 echo ""
 echo ""
 echo "This Script Is Now Complete"
+echo "You now have Apache2, Cot-Gen, & Node-red Installed" 
+echo "To update your Survey123 to Cot run the following commands and keep it open in terminal" 
 echo ""
 echo ""
+echo "cd /opt/cot-gen" 
+echo "./script.sh"
+echo ""
+echo ""
+echo "Simotaniously open another terminal instance and run the following command to activate Node-Red"
+echo ""
+echo ""
+echo "node-red" 
+echo ""
+echo ""
+echo "Then head to your browser go to http://<Insert_Your_IP_Address/FQDN_HERE>:1880"
