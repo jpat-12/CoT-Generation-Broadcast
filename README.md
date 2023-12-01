@@ -19,12 +19,11 @@ cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && 
 
 Access node-red via: 
 
-http://<IP ADDRESS HERE>:1880
-http://127.0.0.1:1880
+1. http://INSERT_IP_ADDRESS_HERE:1880 
+2. http://127.0.0.1:1880
 
 
 ## TO DO ##
 1. Icon Set Creation Automation 
 2. Push Iconsets automatically to TAKServer
 3. Video Instructions/Demo
-4. 
