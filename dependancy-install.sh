@@ -76,7 +76,10 @@ if [[ $choice == "y" ]]; then
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
   sudo apt install apache2
-  ls /var/www/html 
+  echo ""
+  echo ""
+  echo "Showing Contense of /var/www/html"
+  ls -la /var/www/html 
   echo ""
   echo ""
   echo "Is there a file named index.html in the above directory? (y/n)"
