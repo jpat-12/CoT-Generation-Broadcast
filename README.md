@@ -20,13 +20,14 @@ Follow all prompts etc
 Centos/RedHat
 ```
 sudo yum install git
+cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh
+
 ```
 Ubuntu/Debian
 ```
 sudo apt install git
-```
-```
-cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x dependancy-install.sh && ./dependancy-install.sh
+cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh
+
 ```
 ## Post Install ##
 

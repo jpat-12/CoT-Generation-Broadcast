@@ -159,7 +159,7 @@ read node
 # Install Node-Red & NodeJS
 if [[ $node == "y" ]]; then
   # Add the NodeSource repository
-  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+  curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo -E bash -
 
   # Install Node.js
   sudo apt-get install -y nodejs

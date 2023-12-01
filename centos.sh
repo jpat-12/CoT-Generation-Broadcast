@@ -200,7 +200,7 @@ if [[ $node == "y" ]]; then
   sudo yum install -y gcc-c++ make
 
   # Add Node.js repository
-  sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+  sudo curl -sL https://rpm.nodesource.com/setup_20.x | sudo bash -
 
   # Install Node.js
   sudo yum install -y nodejs
