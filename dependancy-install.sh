@@ -167,7 +167,9 @@ elif [[ $node == "n" ]]; then
   # Handle the case when node-red installation is not needed
   echo "Node-Red installation skipped."
 fi
-
+clear
+cd /opt/cot-gen
+ls -la
 echo ""
 echo ""
 echo "This Script Is Now Complete"
