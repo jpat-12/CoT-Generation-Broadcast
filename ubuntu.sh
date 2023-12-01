@@ -15,18 +15,15 @@ echo ""
 read -p "Press any key to begin ..."
 clear
 
-echo "Will you be using apt or yum (apt/yum)"
-read ay 
-clear
 # Check python version 
 python3 --version
 
 # Install required packages
 echo "Installing Dependencies & needed Packages"
-sudo $ay update
-sudo $ay install unzip curl -y
-sudo $ay install python3-pip 
-sudo $ay install python3-pandas
+sudo apt update
+sudo apt install unzip curl -y
+sudo apt install python3-pip 
+sudo apt install python3-pandas
 clear
 
 # Download and extract cot-gen
@@ -79,7 +76,7 @@ if [[ $choice == "y" ]]; then
   #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
-  sudo $ay install apache2
+  sudo apt install apache2
   clear
   echo ""
   echo ""

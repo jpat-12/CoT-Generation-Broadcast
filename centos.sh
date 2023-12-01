@@ -15,18 +15,16 @@ echo ""
 read -p "Press any key to begin ..."
 clear
 
-echo "Will you be using apt or yum (apt/yum)"
-read ay 
-clear
 # Check python version 
 python3 --version
 
 # Install required packages
 echo "Installing Dependencies & needed Packages"
-sudo $ay update
-sudo $ay install unzip curl -y
-sudo $ay install python3-pip 
-sudo $ay install python3-pandas
+sudo yum update
+sudo yum install unzip curl -y
+sudo yum install python3-pip 
+sudo yum install python3-pandas
+sudo yum firewalld
 clear
 
 # Download and extract cot-gen
@@ -79,8 +77,12 @@ if [[ $choice == "y" ]]; then
   #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
-  sudo $ay install apache2
+  sudo yum install httpd
   clear
+  sudo systemctl start httpd
+  sudo systemctl enable httpd
+  sudo firewall-cmd --permanent --add-service=http
+  sudo firewall-cmd --reload
   echo ""
   echo ""
   echo "Showing Contense of /var/www/html"
@@ -161,45 +163,23 @@ read node
 
 # Open CSV download script
 if [[ $node == "y" ]]; then
-  sudo $ay update
-  sudo $ay install npm 
-  npm install -g npm@10.2.4
-  sudo $ay install nvm
-  # Download the Node.js tarball
-  curl -O https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-s390x.tar.xz
+  echo "This script is now going to install Node-Red. When it is installed, it will automatically initialize."  
+  echo "To finish the script after verifying Node-RED, click Ctrl+C."
+  read placeholder
+  # Install development tools and other dependencies
+  sudo yum groupinstall "Development Tools"
+  sudo yum install -y gcc-c++ make
 
- # Extract the tarball
-  tar -xf node-v20.10.0-linux-s390x.tar.xz
+  # Add Node.js repository
+  sudo curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
 
-  # Move the Node.js files to /usr/local/
-  sudo mv node-v20.10.0-linux-s390x/* /usr/local/
+  # Install Node.js
+  sudo yum install -y nodejs
 
-  # Update PATH
-  export PATH=$PATH:/usr/local/bin
-  source ~/.bashrc   # or source ~/.zshrc, depending on your shell
-
-  # Verify installation
-  node -v
-  npm -v
-
-  #click okay 
-  #sudo npm install -g --unsafe-perm node-red
-  #click okay 
-  #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  #export NVM_DIR="$HOME/.nvm"
-  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  sudo nvm install 14
-  sudo nvm use 14
-  #upgrade nodejs
-  sudo nvm install node --reinstall-packages-from=node
-  #reinstall node-red
+  # Install Node-RED globally
   sudo npm install -g --unsafe-perm node-red
-  sleep 20
-  echo "proceed to https://localhost:1880"
-  ufw allow 1880
-    # INSERT TROUBLESHOOTING HERE
+
+
 elif [[ $node == "n" ]]; then  
   # Handle the case when node-red installation is not needed
   echo "Node-Red installation skipped."
