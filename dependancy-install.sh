@@ -59,10 +59,12 @@ fi
 cd /opt/cot-gen/cot-gen/
 chmod +x csv-download.sh
 ./csv-download.sh
+cd csv/
 ls -la 
 
 read -p "Is the mission-data.csv file present in this directory? (y/n) " confirm
 if [[ $confirm == "n" ]]; then
+  cd /opt/cot-gen/cot-gen/csv
   ./csv-download.sh
 fi
 
