@@ -163,18 +163,24 @@ read node
 if [[ $node == "y" ]]; then
   sudo $ay update
   sudo $ay install npm 
+  
+  
+  sudo apt install npm 
+  #click okay 
+  sudo npm install -g --unsafe-perm node-red
+  udw allow 1880
   #click okay 
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  nvm install 14
-  nvm use 14
+  sudo nvm install 14
+  sudo nvm use 14
   #upgrade nodejs
-  nvm install node --reinstall-packages-from=node
+  sudo nvm install node --reinstall-packages-from=node
   #reinstall node-red
-  npm install -g --unsafe-perm node-red
+  sudo npm install -g --unsafe-perm node-red
   echo "Now Launching Node Red" 
   echo "proceed to https://localhost:1880"
   udw allow 1880
@@ -183,7 +189,7 @@ elif [[ $node == "n" ]]; then
   # Handle the case when node-red installation is not needed
   echo "Node-Red installation skipped."
 fi
-clear
+
 cd /opt/cot-gen
 ls -la
 echo ""
