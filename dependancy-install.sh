@@ -28,7 +28,7 @@ ls -la
 cp cot-gen.zip /opt
 cd /opt/
 unzip cot-gen.zip 
-cd /opt/cot-gen/cot-gen
+cd /opt/cot-gen/
 chmod +x /opt/cot-gen/*
 
 
@@ -50,13 +50,13 @@ read choice
 
 # Open CSV download script
 if [[ $choice == "1" ]]; then
-  nano /opt/cot-gen/cot-gen/csv-download.sh
+  nano /opt/cot-gen/csv-download.sh
 elif [[ $choice == "2" ]]; then  
-  vi /opt/cot-gen/cot-gen/csv-download.sh
+  vi /opt/cot-gen/csv-download.sh
 fi
 
 # Run script and validate download
-cd /opt/cot-gen/cot-gen/
+cd /opt/cot-gen/
 chmod +x csv-download.sh
 ./csv-download.sh
 cd csv/
@@ -64,13 +64,13 @@ ls -la
 
 read -p "Is the mission-data.csv file present in this directory? (y/n) " confirm
 if [[ $confirm == "n" ]]; then
-  cd /opt/cot-gen/cot-gen/csv
+  cd /opt/cot-gen/csv
   ./csv-download.sh
 fi
 
 echo "Now checking python parse ability" 
 
-cd /opt/cot-gen/cot-gen
+cd /opt/cot-gen/
 python3 convert-csv.py
 
 # Error validator 
