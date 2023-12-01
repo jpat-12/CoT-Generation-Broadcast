@@ -4,9 +4,11 @@ This script automates the installation of necessary dependencies and formats eve
 
 ## Usage ##
 
-1. Run the script:
-   ```bash
+Run the script (After Install): 
+```
+   cd /opt/cot-gen
    ./script.sh
+```
 
 ## Install ##
 Follow all prompts etc
