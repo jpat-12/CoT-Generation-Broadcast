@@ -89,10 +89,12 @@ elif [[ $choice == "n" ]]; then
   if [[ $choice == "y" ]]; then
     echo "Apache2 Installed"
     echo "Moving On" 
+    clear
   elif [[ $choice == "n" ]]; then  
     echo "Please externally (in a different command prompt install Apache2 or an equivelent)"
     echo "Press enter when ready to move on"
     read misc
+    clear
   fi
 fi
 clear
