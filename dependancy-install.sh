@@ -14,6 +14,7 @@ echo ""
 echo ""
 read -p "Press any key to begin ..."
 
+
 # Check python version 
 python3 --version
 
@@ -32,6 +33,58 @@ cd /opt/cot-gen/
 chmod +x /opt/cot-gen/*
 
 
+
+
+#Installs/Moves past apache2
+echo "Do you already have Apache2/an equivelent installed? (y/n)"
+read choice
+
+#If Yes Than
+if [[ $choice == "y" ]]; then
+  nano /opt/cot-gen/csv-download.sh
+  read -p "what is the absolute file path to the directory that Apache2 uses. (Do not enter the default path)(I.E. Apache2's Default is /var/www/html) " Absolute_path
+  echo "Is $Absolute_path the right path to update? (y/n) "
+  read pathyn
+  if [[ $pathyn == "y" ]]; then
+  
+  #change the absolute file path if apache is already installed
+  sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" opt/cot-gen/convert-csv.py
+
+
+  #Verify Changes to output file path in convert-csv.py 
+  echo "Do you use Nano (1) or Vim (2)"
+  read nv
+    if [[ $nv == "1" ]]; then
+      nano /opt/cot-gen/convert-csv.py
+    elif [[ $nv == "2" ]]; then  
+      vi /opt/cot-gen/convert-csv.py
+    fi
+
+    #If the Absolute File Path is wrong than exit the script
+  elif [[ $pathyn == "n" ]]; then  
+      exit
+
+#If Apache2/an eqivelent is not installed then install apache2 
+elif [[ $choice == "n" ]]; then  
+  echo "Starting Apache2 Install" 
+  sudo apt install apache2
+  ls /var/www/html 
+  echo ""
+  echo ""
+  echo "Is there a file named index.html in the above directory? (y/n)"
+  echo ""
+  echo ""
+  read choise
+  if [[ $choice == "y" ]]; then
+    echo "Apache2 Installed"
+    echo "Moving On" 
+  elif [[ $choice == "n" ]]; then  
+    echo "Please externally (in a different command prompt install Apache2 or an equivelent)"
+    echo "Press enter when ready to move on"
+    read
+
+fi
+
 # Prompt for file ID
 read -p "Please enter your File ID: " fileid
 
@@ -44,14 +97,11 @@ fi
 # Edit File ID in csv-download.sh  
 sed -i "s|curl -L \"https://docs.google.com/spreadsheets/d/<INSERT_FILE_ID_HERE>/export?format=csv\" -o \"/opt/cot-gen/csv/mission-data.csv\"|curl -L \"https://docs.google.com/spreadsheets/d/$fileid/export?format=csv\" -o \"/opt/cot-gen/csv/mission-data.csv\"|" csv-download.sh
 
-# Select editor
-echo "Do you use Nano (1) or Vim (2)"
-read choice
 
 # Open CSV download script
-if [[ $choice == "1" ]]; then
+if [[ $nv == "1" ]]; then
   nano /opt/cot-gen/csv-download.sh
-elif [[ $choice == "2" ]]; then  
+elif [[ $nv == "2" ]]; then  
   vi /opt/cot-gen/csv-download.sh
 fi
 
@@ -99,7 +149,7 @@ fi
 # INSERT NODE RED HERE
 
 echo "Node Red" 
-echo "Do you need to install node-red?" 
+echo "Do you need to install node-red? (y/n)" 
 read node
 
 # Open CSV download script
