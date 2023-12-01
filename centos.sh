@@ -25,6 +25,8 @@ sudo yum install unzip curl -y
 sudo yum install python3-pip 
 sudo yum install python3-pandas
 sudo yum firewalld
+sudo yum install nano 
+sudo yum install vim
 clear
 
 # Download and extract cot-gen
@@ -85,6 +87,30 @@ elif [[ $choice == "n" ]]; then
   sudo firewall-cmd --reload
   echo ""
   echo ""
+  echo '<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Simple HTML Page</title>
+  </head>
+  <body>
+
+      <header>
+          <h1>Hello, World!</h1>
+      </header>
+
+      <section>
+          <p>This is a simple HTML page.</p>
+      </section>
+  
+      <footer>
+          <p>Thank you for visiting!</p>
+      </footer>
+  
+  </body>
+  </html>' | sudo tee /var/www/html/index.html
+
   echo "Showing Contense of /var/www/html"
   ls -la /var/www/html 
   echo ""
@@ -165,6 +191,7 @@ read node
 if [[ $node == "y" ]]; then
   echo "This script is now going to install Node-Red. When it is installed, it will automatically initialize."  
   echo "To finish the script after verifying Node-RED, click Ctrl+C."
+  echo "press enter to continue" 
   read placeholder
   # Install development tools and other dependencies
   sudo yum groupinstall "Development Tools"
