@@ -79,6 +79,7 @@ if [[ $choice == "y" ]]; then
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
   sudo $ay install apache2
+  clear
   echo ""
   echo ""
   echo "Showing Contense of /var/www/html"
