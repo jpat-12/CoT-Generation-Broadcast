@@ -1,0 +1,122 @@
+[
+    {
+        "id": "f11a636220bd75f7",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9cecf36c622a3d43",
+        "type": "inject",
+        "z": "f11a636220bd75f7",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "97daa57a2db47572"
+            ]
+        ]
+    },
+    {
+        "id": "97daa57a2db47572",
+        "type": "trigger",
+        "z": "f11a636220bd75f7",
+        "name": "",
+        "op1": "1",
+        "op2": "0",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "-10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "8cb621f29db58d51"
+            ]
+        ]
+    },
+    {
+        "id": "8cb621f29db58d51",
+        "type": "http request",
+        "z": "f11a636220bd75f7",
+        "name": "Request File",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "127.0.0.0/index.html",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 450,
+        "y": 100,
+        "wires": [
+            [
+                "2f71fe8ea3ea19bb"
+            ]
+        ]
+    },
+    {
+        "id": "2f71fe8ea3ea19bb",
+        "type": "split",
+        "z": "f11a636220bd75f7",
+        "name": "",
+        "splt": "\\n",
+        "spltType": "str",
+        "arraySplt": 1,
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "8e6b1f7d38e2b195"
+            ]
+        ]
+    },
+    {
+        "id": "8e6b1f7d38e2b195",
+        "type": "tcp out",
+        "z": "f11a636220bd75f7",
+        "name": "",
+        "host": "",
+        "port": "",
+        "beserver": "client",
+        "base64": false,
+        "end": false,
+        "tls": "",
+        "x": 710,
+        "y": 100,
+        "wires": []
+    }
+]
