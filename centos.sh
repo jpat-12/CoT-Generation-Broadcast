@@ -196,17 +196,9 @@ if [[ $node == "y" ]]; then
   echo "press enter to continue" 
   read placeholder
   # Install development tools and other dependencies
-  sudo yum groupinstall "Development Tools"
-  sudo yum install -y gcc-c++ make
+  sudo snap install node-red
 
-  # Add Node.js repository
-  sudo curl -sL https://rpm.nodesource.com/setup_20.x | sudo bash -
-
-  # Install Node.js
-  sudo yum install -y nodejs
-
-  # Install Node-RED globally
-  sudo npm install -g --unsafe-perm node-red
+  echo "node red will now start automatically"
 
 
 elif [[ $node == "n" ]]; then  

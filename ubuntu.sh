@@ -158,16 +158,9 @@ read node
 
 # Install Node-Red & NodeJS
 if [[ $node == "y" ]]; then
-  # Add the NodeSource repository
-  curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo -E bash -
+  sudo snap install node-red
 
-  # Install Node.js
-  sudo apt-get install -y nodejs
-
-  # Install Node-RED globally using npm
-  sudo npm install -g --unsafe-perm node-red
-  # Start Node-RED
-  node-red
+  echo "node red will now start automatically"
 
 elif [[ $node == "n" ]]; then  
   # Handle the case when node-red installation is not needed
