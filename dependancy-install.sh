@@ -48,14 +48,14 @@ if [[ $choice == "y" ]]; then
   if [[ $pathyn == "y" ]]; then
   
     #change the absolute file path if apache is already installed
-    sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" opt/cot-gen/convert-csv.py
-
-
+    sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" /opt/cot-gen/convert-csv.py
     #Verify Changes to output file path in convert-csv.py 
     echo "Do you use Nano (1) or Vim (2)"
     read nv
+
     if [[ $nv == "1" ]]; then
       nano /opt/cot-gen/convert-csv.py
+
     elif [[ $nv == "2" ]]; then  
       vi /opt/cot-gen/convert-csv.py
     fi
@@ -155,7 +155,7 @@ read node
 
 # Open CSV download script
 if [[ $node == "y" ]]; then
-  apt install npm 
+  sudo apt install npm 
   click okay 
   sudo npm install -g --unsafe-perm node-red
   echo "Now Launching Node Red" 
