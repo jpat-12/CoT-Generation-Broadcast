@@ -47,22 +47,23 @@ if [[ $choice == "y" ]]; then
   read pathyn
   if [[ $pathyn == "y" ]]; then
   
-  #change the absolute file path if apache is already installed
-  sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" opt/cot-gen/convert-csv.py
+    #change the absolute file path if apache is already installed
+    sed -i "s|curl -L \"with open('/var/www/html/COT-BROADCAST.xml', 'w') as xml_file:\"|curl -L \"with open('$Absolute_path/COT-BROADCAST.xml', 'w') as xml_file:\"|" opt/cot-gen/convert-csv.py
 
 
-  #Verify Changes to output file path in convert-csv.py 
-  echo "Do you use Nano (1) or Vim (2)"
-  read nv
+    #Verify Changes to output file path in convert-csv.py 
+    echo "Do you use Nano (1) or Vim (2)"
+    read nv
     if [[ $nv == "1" ]]; then
       nano /opt/cot-gen/convert-csv.py
     elif [[ $nv == "2" ]]; then  
       vi /opt/cot-gen/convert-csv.py
     fi
-
-    #If the Absolute File Path is wrong than exit the script
+   # If the Absolute File Path is wrong than exit the script
   elif [[ $pathyn == "n" ]]; then  
-      exit
+    exit
+  fi
+
 
 #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
