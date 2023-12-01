@@ -23,6 +23,7 @@ python3 --version
 
 # Install required packages
 echo "Installing Dependencies & needed Packages"
+sudo $ay update
 sudo $ay install unzip curl -y
 sudo $ay install python3-pip 
 sudo $ay install python3-pandas
@@ -104,7 +105,7 @@ fi
 clear
 
 # Prompt for file ID
-read -p "Please enter your File ID: " fileid
+read -p "Please enter your Google Sheets File ID: " fileid
 
 # Confirm file ID  
 read -p "Is this ($fileid) your file ID? (y/n) " confirm
@@ -160,6 +161,7 @@ read node
 
 # Open CSV download script
 if [[ $node == "y" ]]; then
+  sudo $ay update
   sudo $ay install npm 
   #click okay 
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
