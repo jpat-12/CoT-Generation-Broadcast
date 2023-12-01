@@ -13,17 +13,21 @@ echo "If not, do that now, then proceed with the script."
 echo ""
 echo ""
 read -p "Press any key to begin ..."
-
+clear
 
 # Check python version 
 python3 --version
 
 # Install required packages
+echo "Installing Dependencies & needed Packages"
 sudo apt install unzip curl -y
 sudo apt install python3-pip 
 sudo apt install python3-pandas
+clear
 
 # Download and extract cot-gen
+echo "Setting Up Cot-Gen Directory in Opt"
+sleep 4
 cd /tmp/CoT-Generation-Broadcast/cot-gen
 ls -la
 cp cot-gen.zip /opt
@@ -31,8 +35,7 @@ cd /opt/
 unzip cot-gen.zip 
 cd /opt/cot-gen/
 chmod +x /opt/cot-gen/*
-
-
+clear
 
 
 #Installs/Moves past apache2
@@ -89,6 +92,7 @@ elif [[ $choice == "n" ]]; then
     read misc
   fi
 fi
+clear
 
 # Prompt for file ID
 read -p "Please enter your File ID: " fileid
@@ -98,7 +102,7 @@ read -p "Is this ($fileid) your file ID? (y/n) " confirm
 if [[ $confirm == "n" ]]; then
   read -p "Please enter your File ID: " fileid
 fi
-
+clear
 # Edit File ID in csv-download.sh  
 sed -i "s|curl -L \"https://docs.google.com/spreadsheets/d/<INSERT_FILE_ID_HERE>/export?format=csv\" -o \"/opt/cot-gen/csv/mission-data.csv\"|curl -L \"https://docs.google.com/spreadsheets/d/$fileid/export?format=csv\" -o \"/opt/cot-gen/csv/mission-data.csv\"|" csv-download.sh
 
@@ -109,27 +113,39 @@ if [[ $nv == "1" ]]; then
 elif [[ $nv == "2" ]]; then  
   vi /opt/cot-gen/csv-download.sh
 fi
+clear
 
 # Run script and validate download
+echo "Running & Validating download of Cot-Gen"
 cd /opt/cot-gen/
 chmod +x csv-download.sh
+echo "Running csv-download.sh (this downloads your spreadsheet in the CSV format)"
 ./csv-download.sh
+echo ""
+echo ""
 cd csv/
 ls -la 
+echo ""
+echo ""
 
 read -p "Is the mission-data.csv file present in this directory? (y/n) " confirm
 if [[ $confirm == "n" ]]; then
   cd /opt/cot-gen/csv
   ./csv-download.sh
 fi
+clear
 
 echo "Now checking python parse ability" 
 
 cd /opt/cot-gen/
 python3 convert-csv.py
 
+echo "Cot-Gen Installed & working" 
+
+
 # NodeJS & Node-Red Install & Setup
-echo "Node Red" 
+echo "Moving On To (optional Node Red Install)" 
+echo ""
 echo "Do you need to install node-red? (y/n)" 
 read node
 
