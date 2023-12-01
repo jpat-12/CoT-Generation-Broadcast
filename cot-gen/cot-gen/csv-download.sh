@@ -6,7 +6,7 @@ if [ -f "/opt/cot-gen/csv/mission-data.csv" ]; then
 fi
 
 # Download the file using curl
-curl -L "https://docs.google.com/spreadsheets/d/1BqQ8ZlUyDCp6T4a0tZTIrdeCjd84oS99EwORsvYGd80/export?format=csv" -o "/opt/cot-gen/csv/mission-data.csv"
+curl -L "https://docs.google.com/spreadsheets/d/<INSERT_FILE_ID_HERE>/export?format=csv" -o "/opt/cot-gen/csv/mission-data.csv"
 # Print message after file download
 echo "Mission Data CSV File Downloaded"
 
