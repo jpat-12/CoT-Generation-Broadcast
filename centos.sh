@@ -191,6 +191,8 @@ read node
 if [[ $node == "y" ]]; then
   echo "This script is now going to install Node-Red. When it is installed, it will automatically initialize."  
   echo "To finish the script after verifying Node-RED, click Ctrl+C."
+  echo ""
+  echo""
   echo "press enter to continue" 
   read placeholder
   # Install development tools and other dependencies
