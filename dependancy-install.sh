@@ -164,24 +164,39 @@ if [[ $node == "y" ]]; then
   sudo $ay update
   sudo $ay install npm 
   
-  
-  sudo apt install npm 
+  # Download the Node.js tarball
+  curl -O https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-s390x.tar.xz
+
+ # Extract the tarball
+  tar -xf node-v20.10.0-linux-s390x.tar.xz
+
+  # Move the Node.js files to /usr/local/
+  sudo mv node-v20.10.0-linux-s390x/* /usr/local/
+
+  # Update PATH
+  export PATH=$PATH:/usr/local/bin
+  source ~/.bashrc   # or source ~/.zshrc, depending on your shell
+
+  # Verify installation
+  node -v
+  npm -v
+
   #click okay 
-  sudo npm install -g --unsafe-perm node-red
+  #sudo npm install -g --unsafe-perm node-red
   udw allow 1880
   #click okay 
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+  #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+  #export NVM_DIR="$HOME/.nvm"
+  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
   sudo nvm install 14
   sudo nvm use 14
   #upgrade nodejs
   sudo nvm install node --reinstall-packages-from=node
   #reinstall node-red
   sudo npm install -g --unsafe-perm node-red
-  echo "Now Launching Node Red" 
+  sleep 20
   echo "proceed to https://localhost:1880"
   udw allow 1880
     # INSERT TROUBLESHOOTING HERE
