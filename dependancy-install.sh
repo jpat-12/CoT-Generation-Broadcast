@@ -81,7 +81,7 @@ elif [[ $choice == "n" ]]; then
   elif [[ $choice == "n" ]]; then  
     echo "Please externally (in a different command prompt install Apache2 or an equivelent)"
     echo "Press enter when ready to move on"
-    read
+    read misc
 
 fi
 
