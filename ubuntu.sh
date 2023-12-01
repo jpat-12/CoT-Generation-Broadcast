@@ -159,46 +159,19 @@ echo ""
 echo "Do you need to install node-red? (y/n)" 
 read node
 
-# Open CSV download script
+# Install Node-Red & NodeJS
 if [[ $node == "y" ]]; then
-  sudo $ay update
-  sudo $ay install npm 
-  
-  # Download the Node.js tarball
-  curl -O https://nodejs.org/dist/v20.10.0/node-v20.10.0-linux-s390x.tar.xz
+  # Add the NodeSource repository
+  curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 
- # Extract the tarball
-  tar -xf node-v20.10.0-linux-s390x.tar.xz
+  # Install Node.js
+  sudo apt-get install -y nodejs
 
-  # Move the Node.js files to /usr/local/
-  sudo mv node-v20.10.0-linux-s390x/* /usr/local/
-
-  # Update PATH
-  export PATH=$PATH:/usr/local/bin
-  source ~/.bashrc   # or source ~/.zshrc, depending on your shell
-
-  # Verify installation
-  node -v
-  npm -v
-
-  #click okay 
-  #sudo npm install -g --unsafe-perm node-red
-  #click okay 
-  #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  #export NVM_DIR="$HOME/.nvm"
-  #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-  sudo nvm install 14
-  sudo nvm use 14
-  #upgrade nodejs
-  sudo nvm install node --reinstall-packages-from=node
-  #reinstall node-red
+  # Install Node-RED globally using npm
   sudo npm install -g --unsafe-perm node-red
-  sleep 20
-  echo "proceed to https://localhost:1880"
-  ufw allow 1880
-    # INSERT TROUBLESHOOTING HERE
+  # Start Node-RED
+  node-red
+
 elif [[ $node == "n" ]]; then  
   # Handle the case when node-red installation is not needed
   echo "Node-Red installation skipped."
