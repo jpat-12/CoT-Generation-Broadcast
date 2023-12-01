@@ -74,7 +74,7 @@ elif [[ $choice == "n" ]]; then
   echo "Is there a file named index.html in the above directory? (y/n)"
   echo ""
   echo ""
-  read choise
+  read choice  # Corrected variable name here
   if [[ $choice == "y" ]]; then
     echo "Apache2 Installed"
     echo "Moving On" 
@@ -82,8 +82,8 @@ elif [[ $choice == "n" ]]; then
     echo "Please externally (in a different command prompt install Apache2 or an equivelent)"
     echo "Press enter when ready to move on"
     read misc
+  fi
 
-fi
 
 # Prompt for file ID
 read -p "Please enter your File ID: " fileid
