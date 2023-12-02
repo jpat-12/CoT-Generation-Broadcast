@@ -1,4 +1,7 @@
-# CoT-Generation from Survey123 Data ##
+# CoT-Generation from Survey123 Data #
+
+![S123](img/S123.png?raw=true "S123")
+
 
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
 
