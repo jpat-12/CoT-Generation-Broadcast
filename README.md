@@ -13,7 +13,7 @@ It has not been tested on any CentOS Release or Windows.
 ## Usage ##
 
 Run the script (After Install): 
-```
+```bash
 cd /opt/cot-gen
 ./script.sh
 ```
@@ -21,13 +21,13 @@ cd /opt/cot-gen
 ## Install ##
 Follow all prompts etc
 Centos/RedHat
-```
+```bash
 sudo yum install git
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh
 
 ```
 Ubuntu/Debian
-```
+```bash
 sudo apt install git
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh
 
