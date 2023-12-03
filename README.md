@@ -1,3 +1,8 @@
+```bash
+sudo yum install git && sudo mkdir -p /opt/icons && git clone https://github.com/jpat-12/Incident-Icons.git /opt/icons
+
+cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
+```
 # CoT-Generation from Survey123 Data #
 
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
@@ -25,13 +30,11 @@ Centos/RedHat
 ```bash
 sudo yum install git
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh
-
 ```
 Ubuntu/Debian
 ```bash
 sudo apt install git
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh
-
 ```
 ## Post Github Install (Node-Red Formating) ##
 

@@ -89,11 +89,9 @@ uid_mixed=$(echo "${uid_uppercase:0:3}${random_number1}${uid_uppercase:3:3}${ran
 
 
 
-#make the first line of /opt/iconsets/$group_name/iconset.xml
+cat <<EOF > /opt/iconsets/$group_name/iconset.xml
+<?xml version="1.0"?><iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false">
 EOF
-  <iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false">
-
-EOF 
 
 
 # Loop through each file and append /opt/iconset/
@@ -103,18 +101,18 @@ for file in "${files[@]}"; do
 
     if [ "$include_file" == "yes" ]; then
         # Copy the file to the iconset destination folder
-        cp "$file" "$destination_folder/"
-        echo "File copied: $file"
+        printf "\n  <icon name="$file_name" groupName="group_name"  type2525b="a-u-G"" >> /opt/iconsets/$group_name/iconset.xml
+
+        echo "$file line added to inconset.xml"
     else
-        echo "Skipped file: $file"
+        echo ""
+        echo "Skipped"
+        echo ""
     fi
 done
 
 
-
-
-#Allow for user input for group name etc 
-
-#write a script to append a line to /opt/iconsets/$group_name/$group_name/iconset.xml in this format
-
-#<icon name="$file_name" groupName="$group_name"/>
+# Adding the last line of /opt/iconset/
+cat <<EOF > /opt/iconsets/$group_name/iconset.xml
+</iconset>
+EOF
