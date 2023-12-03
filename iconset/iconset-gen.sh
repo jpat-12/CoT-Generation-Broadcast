@@ -74,7 +74,7 @@ files=("$folder_path"/*)
     uid_mixed="${uid_uppercase:0:3}${random_number1}${uid_uppercase:3:3}${random_number2}${uid:6}"
 
 cat <<EOF > /opt/iconsets/$group_name/iconset.xml
-<?xml version="1.0"?><iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false"> \n
+<?xml version="1.0"?><iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false">
 EOF
 
 # Loop through each file in the variable user input path 
@@ -103,3 +103,28 @@ done
 cat <<EOF > /opt/iconsets/$group_name/iconset.xml
 </iconset>
 EOF
+
+cat /opt/iconsets/$group_name/iconset.xml
+
+wait 10
+echo "waiting 10 seconds" 
+echo ""
+echo ""
+echo ""
+echo ""
+echo ""
+echo "above is the contense of $group_name/iconset.xml" 
+echo "would you like me to zip and prepare your iconset to be inported into ATAK/WinTAK? (y/n)" 
+read prep_iconset
+if [ "$prep_iconset" = "y" ] ; then
+  cd /opt/iconsets/
+  zip -r $group_name.zip $group_name
+  echo "What is your current user?" 
+  read user
+  cp $group_name.zip /home/$user/Desktop
+  cp $group_name.zip /opt
+  echo "Your Iconset has been coppied to /home/$user/Desktop & /opt"
+else
+    echo "finish the iconset on your own" 
+fi
+done
