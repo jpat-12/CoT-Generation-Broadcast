@@ -12,7 +12,7 @@ It has not been tested on any Windows.
 ## Getting Started ## 
 
 **[Survey123 to CoT Google Sheet](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o)** <br />
-[MAKE](https://us1.make.com/)<br />
+**[MAKE](https://us1.make.com/)**<br />
 ![CoTBreakdown](img/CoTBreakdown.png?raw=true "CoTBreakdown")
 
 
@@ -25,7 +25,6 @@ cd /opt/cot-gen
 ```
 
 ## Install ##
-Follow all prompts etc
 Centos/RedHat
 ```bash
 sudo yum install git
@@ -42,7 +41,7 @@ cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && 
 
 Access node-red via: 
 
-1. http://INSERT_IP_ADDRESS_HERE:1880 
+1. http://INSERT_IP_ADDRESS_HERE.com:1880 
 2. http://127.0.0.1:1880
 
 
