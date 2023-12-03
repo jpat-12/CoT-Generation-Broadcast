@@ -54,21 +54,6 @@ mkdir -p "$destination_folder"
 # List the files in the folder
 files=("$folder_path"/*)
 
-# Loop through each file in the variable user input path 
-for file in "${files[@]}"; do
-    # Display the current file and ask the user if they want to include it in the iconset
-    read -p "Do you want to include the file '$file' in the iconset? (y/n): " include_file
-
-    if [ "$include_file" == "y" ]; then
-        # Copy the file to the iconset destination folder
-        cp "$file" "$destination_folder/"
-        echo "File copied: $file"
-    else
-        echo "Skipped file: $file"
-    fi
-done
-
-
 # Create a Unique UID for the Iconnset 
 
 # Generate a UUID
@@ -90,24 +75,22 @@ uid_mixed=$(echo "${uid_uppercase:0:3}${random_number1}${uid_uppercase:3:3}${ran
 
 
 cat <<EOF > /opt/iconsets/$group_name/iconset.xml
-<?xml version="1.0"?><iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false">
+<?xml version="1.0"?><iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false"> \n
 EOF
 
-
-# Loop through each file and append /opt/iconset/
+# Loop through each file in the variable user input path 
 for file in "${files[@]}"; do
     # Display the current file and ask the user if they want to include it in the iconset
-    read -p "Do you want to include the file '$file' in the iconset? (yes/no): " include_file
+    read -p "Do you want to include the file '$file' in the iconset? (y/n): " include_file
 
-    if [ "$include_file" == "yes" ]; then
+    if [ "$include_file" == "y" ]; then
         # Copy the file to the iconset destination folder
+        cp "$file" "$destination_folder/"
+        echo "File copied: $file"
         printf "\n  <icon name="$file_name" groupName="group_name"  type2525b="a-u-G"" >> /opt/iconsets/$group_name/iconset.xml
-
         echo "$file line added to inconset.xml"
     else
-        echo ""
-        echo "Skipped"
-        echo ""
+        echo "Skipped file: $file"
     fi
 done
 
