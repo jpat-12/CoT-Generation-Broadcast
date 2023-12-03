@@ -11,8 +11,8 @@ It has not been tested on any Windows.
 
 ## Getting Started ## 
 
-[Survey123 to CoT Google Sheet](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o)
-[MAKE](https://us1.make.com/)
+**[Survey123 to CoT Google Sheet](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o) <br />
+[MAKE](https://us1.make.com/)<br />
 ![CoTBreakdown](img/CoTBreakdown.png?raw=true "CoTBreakdown")
 
 
