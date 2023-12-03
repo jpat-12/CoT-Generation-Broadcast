@@ -35,17 +35,17 @@ folder_contents=$(ls "$folder_path")
 
 #Make Iconset Directory
 echo "Making Iconset Directory" 
-mkdir /opt/iconsets/
+mkdir -p /opt/iconsets/
 
 #Prompt User to Input their Group Name
 #THIS DOES NOT ALLOW FOR MORE THAN ONE GROUP
 read -p "What do you want the name of your IconSet to be?" $group_name
 
 #Create a directory that will be zipped 
-mkdir /opt/iconsets/$group_name/
+mkdir -p /opt/iconsets/$group_name/
 
 # Create Iconset directory for the icon files to go into 
-mkdir /opt/iconsets/$group_name/$group_name
+mkdir  -p /opt/iconsets/$group_name/$group_name/
 
 # Create the destination folder for the iconset
 destination_folder="/opt/iconsets/$group_name/$group_name"
