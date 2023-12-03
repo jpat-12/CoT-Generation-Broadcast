@@ -87,8 +87,10 @@ for file in "${files[@]}"; do
         # Copy the file to the iconset destination folder
         cp "$file" "$destination_folder/"
         echo "File copied: $file"
-        printf "\n  <icon name="$file_name" groupName="group_name"  type2525b="a-u-G"" >> /opt/iconsets/$group_name/iconset.xml
+        printf "\n  <icon name="$file_name" groupName="$group_name"  type2525b="a-u-G">" >> /opt/iconsets/$group_name/iconset.xml
         echo "$file line added to inconset.xml"
+        sleep 3 
+        clear
     else
         echo "Skipped file: $file"
     fi

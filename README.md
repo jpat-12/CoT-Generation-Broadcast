@@ -1,6 +1,7 @@
 ```bash
 sudo yum install git && sudo mkdir -p /opt/icons && git clone https://github.com/jpat-12/Incident-Icons.git /opt/icons
-
+```
+```bash
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
 ```
 # CoT-Generation from Survey123 Data #
