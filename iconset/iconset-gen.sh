@@ -1,5 +1,8 @@
 #!/bin/bash
-
+clear
+echo ""
+echo "" 
+echo ""
 echo "Please run this script as the Root user" 
 echo "If you don't it will not work properly" 
 echo "Waiting for 10 seconds" 
@@ -42,14 +45,13 @@ mkdir -p /opt/iconsets/
 read -p "What do you want the name of your IconSet to be?" $group_name
 
 #Create a directory that will be zipped 
-mkdir -p /opt/iconsets/$group_name/
+mkdir -p /opt/iconsets/$group_name
 
 # Create Iconset directory for the icon files to go into 
-mkdir  -p /opt/iconsets/$group_name/$group_name/
+mkdir  -p /opt/iconsets/$group_name/$group_name
 
 # Create the destination folder for the iconset
 destination_folder="/opt/iconsets/$group_name/$group_name"
-mkdir -p "$destination_folder"
 
 # List the files in the folder
 files=("$folder_path"/*)
