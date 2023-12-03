@@ -24,7 +24,7 @@ cd /opt/cot-gen
 ./script.sh
 ```
 
-## Install ##
+## Github Install ##
 Centos/RedHat
 ```bash
 sudo yum install git
@@ -37,7 +37,7 @@ sudo apt install git
 cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh
 
 ```
-## Post Install ##
+## Post Github Install (Node-Red Formating) ##
 
 Access node-red via: 
 1. http://127.0.0.1:1880
