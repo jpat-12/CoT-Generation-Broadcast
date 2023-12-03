@@ -40,9 +40,7 @@ cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && 
 ## Post Install ##
 
 Access node-red via: 
-
-1. http://INSERT_IP_ADDRESS_HERE.com:1880 
-2. http://127.0.0.1:1880
+1. http://127.0.0.1:1880
 
 
 ## TO DO ##
