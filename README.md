@@ -1,12 +1,9 @@
 # CoT-Generation from Survey123 Data #
 
-![S123](img/S123.png?raw=true "S123")
-
-
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
-
+![CoTBreakdown](img/CoTBreakdown.png?raw=true "CoTBreakdown")
 ## Testing ###
-This script has been validated and will work for Ubuntu20.04 / 22.04 / 23.04 & CentOS7.
+This script has been validated and will work for Ubuntu20.04 / 22.04 / 23.04 & CentOS7.<br />
 It has not been tested on any Windows.
 
 ## Getting Started ## 
