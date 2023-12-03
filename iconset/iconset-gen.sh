@@ -42,7 +42,7 @@ mkdir -p /opt/iconsets/
 
 #Prompt User to Input their Group Name
 #THIS DOES NOT ALLOW FOR MORE THAN ONE GROUP
-read -p "What do you want the name of your IconSet to be?" $group_name
+read -p "What do you want the name of your IconSet to be?" group_name
 
 #Create a directory that will be zipped 
 mkdir -p /opt/iconsets/$group_name
@@ -56,25 +56,22 @@ destination_folder="/opt/iconsets/$group_name/$group_name"
 # List the files in the folder
 files=("$folder_path"/*)
 
-# Create a Unique UID for the Iconnset 
 
-# Generate a UUID
-full_uuid=$(uuidgen)
+#---------------
+# UID GENERATION
+#---------------
+    # Generate a UUID and remove hyphens
+    uid=$(uuidgen | tr -d '-')
 
-# Extract the first 8 characters
-uid=${full_uuid:0:8}
+    # Convert to uppercase
+    uid_uppercase=$(echo "$uid" | tr 'a-f' 'A-F')
 
-# Convert half of the characters to uppercase
-uid_uppercase=$(echo "$uid" | awk '{print toupper(substr($0, 1, length($0)/2))}' )
+    # Add two random numbers (between 0 and 9)
+    random_number1=$((RANDOM % 10))
+    random_number2=$((RANDOM % 10))
 
-# Add two random numbers (between 0 and 9)
-random_number1=$((RANDOM % 10))
-random_number2=$((RANDOM % 10))
-
-# Combine uppercase, lowercase, and numbers
-uid_mixed=$(echo "${uid_uppercase:0:3}${random_number1}${uid_uppercase:3:3}${random_number2}${uid:6}")
-
-
+    # Combine uppercase, lowercase, and numbers
+    uid_mixed="${uid_uppercase:0:3}${random_number1}${uid_uppercase:3:3}${random_number2}${uid:6}"
 
 cat <<EOF > /opt/iconsets/$group_name/iconset.xml
 <?xml version="1.0"?><iconset version="11" name="$group_name" defaultGroup="$group_name" uid="$uid_mixed" skipResize="false"> \n
@@ -82,6 +79,9 @@ EOF
 
 # Loop through each file in the variable user input path 
 for file in "${files[@]}"; do
+    # Extract the file name from the path 
+    file_name=$(basename "$file")
+
     # Display the current file and ask the user if they want to include it in the iconset
     read -p "Do you want to include the file '$file' in the iconset? (y/n): " include_file
 
@@ -89,7 +89,7 @@ for file in "${files[@]}"; do
         # Copy the file to the iconset destination folder
         cp "$file" "$destination_folder/"
         echo "File copied: $file"
-        printf "\n  <icon name="$file_name" groupName="$group_name"  type2525b="a-u-G">" >> /opt/iconsets/$group_name/iconset.xml
+        printf "\n  <icon name=\"$file_name\" groupName=\"$group_name\"  type2525b=\"a-u-G\">" >> /opt/iconsets/$group_name/iconset.xml
         echo "$file line added to inconset.xml"
         sleep 3 
         clear
