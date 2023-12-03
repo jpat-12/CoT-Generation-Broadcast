@@ -6,8 +6,12 @@
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
 
 ## Testing ###
-This script has been validated and will work for Ubuntu20.04 / 22.04 / 23.04.
-It has not been tested on any CentOS Release or Windows.
+This script has been validated and will work for Ubuntu20.04 / 22.04 / 23.04 & CentOS7.
+It has not been tested on any Windows.
+
+## Getting Started ## 
+
+[Survey123 to CoT Google Sheet](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o)
 
 
 ## Usage ##
