@@ -44,6 +44,5 @@ Access node-red via:
 
 
 ## TO DO ##
-1. Icon Set Creation Automation 
-2. Push Iconsets automatically to TAKServer
-3. Video Instructions/Demo
+1. Push iconsets automatically to TAKServer
+2. Video Instructions/Demo
