@@ -91,7 +91,7 @@ for file in "${files[@]}"; do
         echo "File copied: $file"
         printf "\n  <icon name=\"$file_name\" groupName=\"$group_name\"  type2525b=\"a-u-G\">" >> /opt/iconsets/$group_name/iconset.xml
         echo "$file line added to inconset.xml"
-        sleep 3 
+        sleep 1 
         clear
     else
         echo "Skipped file: $file"
@@ -100,10 +100,9 @@ done
 
 
 # Adding the last line of /opt/iconset/
-cat <<EOF > /opt/iconsets/$group_name/iconset.xml
-</iconset>
-EOF
+printf "\n  </iconset>" >> /opt/iconsets/$group_name/iconset.xml
 
+# Print iconset.xml to terminal so the user can verify it
 cat /opt/iconsets/$group_name/iconset.xml
 
 wait 10
