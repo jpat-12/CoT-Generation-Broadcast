@@ -74,8 +74,6 @@ if [[ $choice == "y" ]]; then
         fi
   fi
 
-
-
   #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
