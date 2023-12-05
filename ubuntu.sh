@@ -165,6 +165,73 @@ elif [[ $node == "n" ]]; then
   echo "Node-Red installation skipped."
 fi
 
+# Ask if they want a specific cert for node-red/S123
+echo "Would you like to make a specific cert for Survey123? (y/n)" 
+
+# Print answer to s123_cert_yn
+read s123_cert_yn
+
+# If statement to create client cert
+if [[ $s123_cert_yn == "y" || $s123_cert_yn == "Y" ]]; then
+  echo "changing to certs directory"
+  
+  # Changing directory so we can run ./makeCert.sh
+  cd /opt/tak/certs/
+  ls -la
+  echo "Running as TAK user"
+
+  # Assign cert name to $cert_name variable
+  cert_name="Survey123"
+
+  # Ask for a customized cert name if they want to create one
+  read -p "What would you like the cert name to be? (Default = Survey123)" user_input
+  
+  # If user input of $cert_name is empty than use default 
+  cert_name=${user_input:-$cert_name}
+
+  # Make Cert
+  echo "Make admin certificate"
+  sudo -u tak ./makeCert.sh client $cert_name
+  echo "Client Cert $cert_name has been created"
+  sleep 3
+  
+  # Restart Takserver
+  echo ""
+  echo ""
+  echo "Restarting TAKServer" 
+  echo ""
+  echo ""
+  service takserver restart
+  clear
+
+  # Editing $cert_name so it can be used later in node red
+  echo "Changing $cert_name for Node-Red" 
+  sleep 2
+  cd /opt/tak/certs/files
+
+  # Make cert.pem 
+  openssl pkcs12 -clcerts -nokeys -in $cert_name -out $cert_name.cert.pem
+
+  # Make key.pem
+  openssl pkcs12 -nocerts -nodes -in $cert_name.p12 -out $cert_name.key.pem
+  
+  # Move cert.pem & key.pem to opt 
+  cd /opt/tak/certs/files
+  cp $cert_name.key.pem /opt/$cert_name.key.pem
+  cp $cert_name.cert.pem /opt/$cert_name.cert.pem
+  clear
+  echo ""
+  echo ""
+  echo "Your $cert_name is now converted into node-red readable format" 
+  echo "The certs are now available at /opt && /opt/tak/certs/files"
+  echo ""
+  echo ""
+  sleep 4
+  echo "Press any key to continue" 
+  read continue
+fi 
+
+clear
 cd /opt/cot-gen
 ls -la
 echo ""
@@ -178,10 +245,6 @@ echo "cd /opt/cot-gen"
 echo "./script.sh"
 echo ""
 echo ""
-echo "Simotaniously open another terminal instance and run the following command to activate Node-Red"
-echo ""
-echo ""
-echo "node-red" 
-echo ""
-echo ""
 echo "Then head to your browser go to http://<Insert_Your_IP_Address/FQDN_HERE>:1880"
+echo ""
+echo ""
