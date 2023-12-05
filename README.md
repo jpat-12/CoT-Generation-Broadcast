@@ -1,9 +1,3 @@
-```bash
-sudo mkdir -p /opt/icons && git clone https://github.com/jpat-12/Incident-Icons.git /opt/icons
-```
-```bash
-cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
-```
 # CoT-Generation from Survey123 Data #
 
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
@@ -12,7 +6,7 @@ This script automates the installation of necessary dependencies and formats eve
 This script has been validated and will work for Ubuntu20.04 / 22.04 / 23.04 & CentOS7.<br />
 It has not been tested on any Windows.
 
-## Getting Started ## 
+## LINKS ## 
 
 **[Survey123 to CoT Google Sheet](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o)** <br /><br />
 **[MAKE](https://us1.make.com/)**<br />
@@ -46,3 +40,12 @@ Access node-red via:
 ## TO DO ##
 1. Push iconsets automatically to TAKServer
 2. Video Instructions/Demo
+
+
+## Iconset Creation Script ## 
+```bash
+sudo mkdir -p /opt/icons && git clone https://github.com/jpat-12/Incident-Icons.git /opt/icons
+```
+```bash
+cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
+```
