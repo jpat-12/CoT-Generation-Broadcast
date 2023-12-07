@@ -195,9 +195,15 @@ if [[ $node == "y" ]]; then
   echo "press enter to continue" 
   read placeholder
   # Install development tools and other dependencies
-  sudo snap install node-red
+  sudo yum update -y
+  sudo yum install epel-release -y
+  sudo yum install wget -y
+  sudo yum install nodejs
+  sudo yum install npm
+  sudo npm install -g node-red
 
-  echo "node red will now start automatically"
+
+  echo "To Start Node Red run "Node-red""
 
 
 elif [[ $node == "n" ]]; then  
@@ -278,6 +284,11 @@ echo ""
 echo ""
 echo "This Script Is Now Complete"
 echo "You now have Apache2, Cot-Gen, & Node-red Installed" 
+echo ""
+echo ""
+echo "To Start Node Red run "Node-red""
+echo "" 
+echo ""
 echo "To update your Survey123 to Cot run the following commands and keep it open in terminal" 
 echo ""
 echo ""
