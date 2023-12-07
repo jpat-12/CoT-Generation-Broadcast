@@ -24,6 +24,8 @@ sudo apt update
 sudo apt install unzip curl -y
 sudo apt install python3-pip 
 sudo apt install python3-pandas
+pip install pandas 
+pip3 install pandas
 clear
 
 # Download and extract cot-gen
