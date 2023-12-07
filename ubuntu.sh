@@ -211,20 +211,24 @@ if [[ $s123_cert_yn == "y" || $s123_cert_yn == "Y" ]]; then
   sleep 2
   cd /opt/tak/certs/files
 
+  echo "stop and make a cert named admin.p12 if you do not already have one made" 
+  echo "When the admin.p12 cert is made press enter" 
+  read cert_hi
+
   # Make cert.pem 
-  openssl pkcs12 -clcerts -nokeys -in $cert_name.p12 -out $cert_name.cert.pem
+  openssl pkcs12 -clcerts -nokeys -in admin.p12 -out Survey123.cert.pem
 
   # Make key.pem
-  openssl pkcs12 -nocerts -nodes -in $cert_name.p12 -out $cert_name.key.pem
+  openssl pkcs12 -nocerts -nodes -in admin.p12 -out Survey123.key.pem
   
   # Move cert.pem & key.pem to opt 
   cd /opt/tak/certs/files
-  cp $cert_name.key.pem /opt/$cert_name.key.pem
-  cp $cert_name.cert.pem /opt/$cert_name.cert.pem
+  cp Survey123.key.pem /opt/Survey123.key.pem
+  cp Survey123.cert.pem /opt/Survey123.cert.pem
   clear
   echo ""
   echo ""
-  echo "Your $cert_name is now converted into node-red readable format" 
+  echo "Your Survey123 is now converted into node-red readable format" 
   echo "The certs are now available at /opt && /opt/tak/certs/files"
   echo ""
   echo ""
