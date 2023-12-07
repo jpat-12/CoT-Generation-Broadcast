@@ -249,7 +249,7 @@ if [[ $s123_cert_yn == "y" || $s123_cert_yn == "Y" ]]; then
   cd /opt/tak/certs/files
 
   # Make cert.pem 
-  openssl pkcs12 -clcerts -nokeys -in $cert_name -out $cert_name.cert.pem
+  openssl pkcs12 -clcerts -nokeys -in $cert_name.p12 -out $cert_name.cert.pem
 
   # Make key.pem
   openssl pkcs12 -nocerts -nodes -in $cert_name.p12 -out $cert_name.key.pem
