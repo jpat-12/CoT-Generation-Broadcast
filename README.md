@@ -21,6 +21,7 @@ cd /opt/cot-gen
 ```
 
 ## Github Install ##
+MAKE SURE YOU HAVE SET YOUR GOOGLE SHEET TO "ANYONE WITH LINK"
 Centos/RedHat
 ```bash
 sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh
