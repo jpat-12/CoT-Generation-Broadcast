@@ -216,10 +216,10 @@ if [[ $s123_cert_yn == "y" || $s123_cert_yn == "Y" ]]; then
   read cert_hi
 
   # Make cert.pem 
-  openssl pkcs12 -clcerts -nokeys -in admin.p12 -out Survey123.cert.pem
+  openssl pkcs12 -clcerts -nokeys -in $cert_name.p12 -out Survey123.cert.pem
 
   # Make key.pem
-  openssl pkcs12 -nocerts -nodes -in admin.p12 -out Survey123.key.pem
+  openssl pkcs12 -nocerts -nodes -in $cert_name.p12 -out Survey123.key.pem
   
   # Move cert.pem & key.pem to opt 
   cd /opt/tak/certs/files
