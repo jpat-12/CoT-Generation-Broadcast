@@ -179,22 +179,18 @@ if [[ $s123_cert_yn == "y" || $s123_cert_yn == "Y" ]]; then
   
   # Changing directory so we can run ./makeCert.sh
   cd /opt/tak/certs/
-  ls -la
+  ls 
   echo "Running as TAK user"
 
-  # Assign cert name to $cert_name variable
-  cert_name="Survey123"
+  echo "Creating Cert Named Survey123" 
 
-  # Ask for a customized cert name if they want to create one
-  read -p "What would you like the cert name to be? (Default = Survey123)" user_input
-  
   # If user input of $cert_name is empty than use default 
-  cert_name=${user_input:-$cert_name}
-
+  cert_name="Survey123"
   # Make Cert
-  echo "Make admin certificate"
-  sudo -u tak ./makeCert.sh client $cert_name
+  cd /opt/tak/certs
+  ./makeCert.sh client $cert_name
   echo "Client Cert $cert_name has been created"
+  chown tak:tak /opt/tak/certs/files
   sleep 3
   
   # Restart Takserver
