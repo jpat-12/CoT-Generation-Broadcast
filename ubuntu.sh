@@ -168,70 +168,63 @@ elif [[ $node == "n" ]]; then
 fi
 
 # Ask if they want a specific cert for node-red/S123
-echo "Would you like to make a specific cert for Survey123? (y/n)" 
-
-# Print answer to s123_cert_yn
-read s123_cert_yn
-
+echo "Making Survey123 Cert For Node-Red" 
 # If statement to create client cert
-if [[ $s123_cert_yn == "y" || $s123_cert_yn == "Y" ]]; then
-  echo "changing to certs directory"
-  
-  # Changing directory so we can run ./makeCert.sh
-  cd /opt/tak/certs/
-  ls 
-  echo "Running as TAK user"
+echo "changing to certs directory"
+# Changing directory so we can run ./makeCert.sh
+cd /opt/tak/certs/
+ls 
+echo "Running as TAK user"
 
-  echo "Creating Cert Named Survey123" 
+echo "Creating Cert Named Survey123" 
 
-  # If user input of $cert_name is empty than use default 
-  cert_name="Survey123"
-  # Make Cert
-  cd /opt/tak/certs
-  ./makeCert.sh client $cert_name
-  echo "Client Cert $cert_name has been created"
-  chown tak:tak /opt/tak/certs/files
-  sleep 3
-  
-  # Restart Takserver
-  echo ""
-  echo ""
-  echo "Restarting TAKServer" 
-  echo ""
-  echo ""
-  service takserver restart
-  clear
+# If user input of $cert_name is empty than use default 
 
-  # Editing $cert_name so it can be used later in node red
-  echo "Changing $cert_name for Node-Red" 
-  sleep 2
-  cd /opt/tak/certs/files
+# Make Cert
+cd /opt/tak/certs
+./makeCert.sh client Survey123
+echo "Client Cert Survey123 has been created"
+chown tak:tak /opt/tak/certs/files
+sleep 3
 
-  echo "stop and make a cert named admin.p12 if you do not already have one made" 
-  echo "When the admin.p12 cert is made press enter" 
-  read cert_hi
+# Restart Takserver
+echo ""
+echo ""
+echo "Restarting TAKServer" 
+echo ""
+echo ""
+service takserver restart
+clear
 
-  # Make cert.pem 
-  openssl pkcs12 -clcerts -nokeys -in $cert_name.p12 -out Survey123.cert.pem
+# Editing $cert_name so it can be used later in node red
+echo "Changing Survey123 for Node-Red" 
+sleep 2
+cd /opt/tak/certs/files
 
-  # Make key.pem
-  openssl pkcs12 -nocerts -nodes -in $cert_name.p12 -out Survey123.key.pem
-  
-  # Move cert.pem & key.pem to opt 
-  cd /opt/tak/certs/files
-  cp Survey123.key.pem /opt/Survey123.key.pem
-  cp Survey123.cert.pem /opt/Survey123.cert.pem
-  clear
-  echo ""
-  echo ""
-  echo "Your Survey123 is now converted into node-red readable format" 
-  echo "The certs are now available at /opt && /opt/tak/certs/files"
-  echo ""
-  echo ""
-  sleep 4
-  echo "Press any key to continue" 
-  read continue
-fi 
+echo "stop and make a cert named admin.p12 if you do not already have one made" 
+echo "When the admin.p12 cert is made press enter" 
+read cert_hi
+
+# Make cert.pem 
+openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem
+
+# Make key.pem
+openssl pkcs12 -nocerts -nodes -in Survey123.p12 -out Survey123.key.pem
+
+# Move cert.pem & key.pem to opt 
+cd /opt/tak/certs/files
+cp Survey123.key.pem /opt/Survey123.key.pem
+cp Survey123.cert.pem /opt/Survey123.cert.pem
+clear
+echo ""
+echo ""
+echo "Your Survey123 is now converted into node-red readable format" 
+echo "The certs are now available at /opt && /opt/tak/certs/files"
+echo ""
+echo ""
+sleep 4
+echo "Press any key to continue" 
+read continue
 
 clear
 cd /opt/cot-gen
