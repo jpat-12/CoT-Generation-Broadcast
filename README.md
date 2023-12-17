@@ -24,11 +24,11 @@ cd /opt/cot-gen
 MAKE SURE YOU HAVE SET YOUR GOOGLE SHEET TO "ANYONE WITH LINK"
 Centos/RedHat
 ```bash
-sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh
+sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
 ```
 Ubuntu/Debian
 ```bash
-sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh
+sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
 ```
 ## Post Github Install (Node-Red Formating) ##
 

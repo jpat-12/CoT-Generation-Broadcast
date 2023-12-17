@@ -244,10 +244,6 @@ echo "Changing Survey123 for Node-Red"
 sleep 2
 cd /opt/tak/certs/files
 
-echo "stop and make a cert named admin.p12 if you do not already have one made" 
-echo "When the admin.p12 cert is made press enter" 
-read cert_hi
-
 # Make cert.pem 
 openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem
 
