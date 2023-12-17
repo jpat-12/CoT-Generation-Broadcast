@@ -2,9 +2,7 @@
 
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
 ![CoTBreakdown](img/CoTBreakdown.png?raw=true "CoTBreakdown")
-## Testing ###
-This script has been validated and will work for Ubuntu20.04 / 22.04 / 23.04 & CentOS7.<br />
-It has not been tested on any Windows.
+
 
 ## LINKS ## 
 
@@ -13,20 +11,15 @@ It has not been tested on any Windows.
 
 
 ## Usage ##
-
-Run the script (After Install): 
 ```bash
-cd /opt/cot-gen
-./script.sh
+cd /opt/cot-gen && ./script.sh
 ```
 
-## Github Install ##
-MAKE SURE YOU HAVE SET YOUR GOOGLE SHEET TO "ANYONE WITH LINK"
-Centos/RedHat
+## Centos/RedHat Install ##
 ```bash
 sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
 ```
-Ubuntu/Debian
+## Ubuntu/Debian Install##
 ```bash
 sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
 ```
