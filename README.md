@@ -34,17 +34,16 @@ sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Gene
 ## Troubleshooting ##
 1. Make sure your Google Sheets sharing is set to anyone with link 
 2. Make sure you have the "Event" sheet all the way to the left hand side of the screen inside Google Sheets 
-3. Make sure your cert.pem & key.pem files are not at 0 kb. This could be the case if you typed your password in wrong. 
-4. Make sure your Node-Red file call is correct
-5. Make sure you are running the script.sh (/opt/cot-gen/script.sh) and Node Red at the same time. 
-6. If there are no errors in the log, but nothing happens check that the node red server is running by going to http://localhost:1880
-7. 
-
-### Survey123 Cert Conversion Commands ###
+3. Make sure your cert.pem & key.pem files are not at 0 kb. This could be the case if you typed your password in wrong.
 ```bash
 cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem && openssl pkcs12 -nocerts -nodes -in Survey123.p12 -out Survey123.key.pem
 
-```
+``` 
+4. Make sure your Node-Red file call is correct
+5. Make sure you are running the script.sh (/opt/cot-gen/script.sh) and Node Red at the same time. 
+6. If there are no errors in the log, but nothing happens check that the node red server is running by going to http://localhost:1880
+
+
 
 
 ## TO DO ##
