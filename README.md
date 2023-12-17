@@ -31,6 +31,11 @@ Ubuntu/Debian
 sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
 ```
 ## Post Github Install (Node-Red Formating) ##
+Survey123 Cert Conversion Commands 
+```bash
+cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem && openssl pkcs12 -nocerts -nodes -in Survey123.p12 -out Survey123.key.pem
+
+```
 
 Access node-red via: 
 1. http://127.0.0.1:1880
