@@ -167,8 +167,6 @@ elif [[ $node == "n" ]]; then
   echo "Node-Red installation skipped."
 fi
 
-# Ask if they want a specific cert for node-red/S123
-echo "Making Survey123 Cert For Node-Red" 
 # If statement to create client cert
 echo "changing to certs directory"
 # Changing directory so we can run ./makeCert.sh
@@ -200,10 +198,9 @@ clear
 echo "Changing Survey123 for Node-Red" 
 sleep 2
 cd /opt/tak/certs/files
-
-echo "stop and make a cert named admin.p12 if you do not already have one made" 
-echo "When the admin.p12 cert is made press enter" 
-read cert_hi
+clear 
+echo "default password "atakatak""
+sleep 2
 
 # Make cert.pem 
 openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem

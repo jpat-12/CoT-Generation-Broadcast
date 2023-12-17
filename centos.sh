@@ -243,7 +243,9 @@ clear
 echo "Changing Survey123 for Node-Red" 
 sleep 2
 cd /opt/tak/certs/files
-
+clear 
+echo "default password "atakatak""
+sleep 2
 # Make cert.pem 
 openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem
 
