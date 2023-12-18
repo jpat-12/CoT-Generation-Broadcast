@@ -5,7 +5,7 @@ This script automates the installation of necessary dependencies and formats eve
 
 
 ## LINKS ## 
-**[Youtube Install Walkthrough](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o)** <br /><br />
+**[Youtube Install Walkthrough](https://www.youtube.com/watch?v=eMRZVkyE-1U)** <br /><br />
 **[Survey123 to CoT Google Sheet](https://docs.google.com/spreadsheets/d/1MoyjPxG49XpDrhbqdJYYgW4T7DQ8FachH2EN8Wm-N4o)** <br /><br />
 **[MAKE](https://us1.make.com/)**<br />
 
