@@ -1,3 +1,4 @@
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jpat)
 # CoT-Generation from Survey123 Data #
 
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
