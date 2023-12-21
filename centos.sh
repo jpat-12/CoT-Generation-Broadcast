@@ -25,8 +25,6 @@ sudo yum install unzip curl -y
 sudo yum install python3-pip 
 sudo yum install python3-pandas
 sudo yum firewalld
-sudo yum install nano 
-sudo yum install vim
 pip3 install pandas
 clear
 
