@@ -33,7 +33,7 @@ sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Gene
 cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -out Survey123.cert.pem && openssl pkcs12 -nocerts -nodes -in Survey123.p12 -out Survey123.key.pem
 
 ``` 
-4. Make sure your Node-Red file call is correct
+4. Make sure your Node-Red file call is correct (If node-red & cot-gen [a stock verison] are being run on the same machine https://127.0.0.1/COT-BROADCAST.xml will work)
 5. Make sure you are running the script.sh (/opt/cot-gen/script.sh) and Node Red at the same time. 
 6. If there are no errors in the log, but nothing happens check that the node red server is running by going to http://localhost:1880
 
@@ -42,6 +42,8 @@ cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -ou
 
 ## TO DO ##
 1. Push iconsets automatically to TAKServer
+2. Make Cot-Gen a service enabled on startup 
+3. Make Node-Red a service for Centos7 installer
 
 ## Iconset Creation Script ## 
 ```bash
