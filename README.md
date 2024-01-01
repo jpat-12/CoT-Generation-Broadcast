@@ -1,7 +1,13 @@
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jpat)
 # CoT-Generation from Survey123 Data #
 
-This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
+## THIS IS ONLY A TESTING VERSION PLEASE DO NOT USE THIS 
+## USE THE LINK https://github.com/jpat-12/CoT-Generation-Broadcast TO ACTUALLY INSTALL THE BACKEND
+<br /><br /><br /><br />
+
+<p align="center"> This script automates the installation of necessary dependencies and formats <br />
+everything for COT-Generation from Survey123 Data. </p>
+
 ![CoTBreakdown](img/CoTBreakdown.png?raw=true "CoTBreakdown")
 
 
@@ -18,11 +24,11 @@ cd /opt/cot-gen && ./script.sh
 
 ## Centos/RedHat Install ##
 ```bash
-sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast-TESTING.git && cd CoT-Generation-Broadcast-TESTING && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
+sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
 ```
 ## Ubuntu/Debian Install ##
 ```bash
-sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast-TESTING.git && cd CoT-Generation-Broadcast-TESTING && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
+sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
 ```
 
 ## Troubleshooting ##
@@ -44,11 +50,15 @@ cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -ou
 1. Push iconsets automatically to TAKServer
 2. Make Cot-Gen a service enabled on startup 
 3. Make Node-Red a service for Centos7 installer
+4. Customization Video (Google Sheets)
+5. Add image in terminal for iconset creation scripts
+
+
+
 
 ## Iconset Creation Script ## 
 ```bash
 sudo mkdir -p /opt/icons && git clone https://github.com/jpat-12/Incident-Icons.git /opt/icons
 ```
 ```bash
-cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast-TESTING.git && cd CoT-Generation-Broadcast-TESTING && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
-```
+cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
