@@ -24,11 +24,11 @@ cd /opt/cot-gen && ./script.sh
 
 ## Centos/RedHat Install ##
 ```bash
-sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
+sudo yum install git && cd /tmp && git clone -b CoT-Gen-Service-Update https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
 ```
 ## Ubuntu/Debian Install ##
 ```bash
-sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
+sudo apt install git && cd /tmp && git clone -b CoT-Gen-Service-Update https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
 ```
 
 ## Troubleshooting ##
