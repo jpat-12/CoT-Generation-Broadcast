@@ -52,6 +52,7 @@ cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -ou
 3. Make Node-Red a service for Centos7 installer
 4. Customization Video (Google Sheets)
 5. Add image in terminal for iconset creation scripts
+6. Color Code CAP Asset report updates with the color of the ground team
 
 
 

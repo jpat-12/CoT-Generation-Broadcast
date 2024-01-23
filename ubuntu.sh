@@ -20,10 +20,10 @@ python3 --version
 
 # Install required packages
 echo "Installing Dependencies & needed Packages"
-sudo apt update
+sudo apt update -y
 sudo apt install unzip curl -y
-sudo apt install python3-pip 
-sudo apt install python3-pandas
+sudo apt install python3-pip -y
+sudo apt install python3-pandas -y 
 pip install pandas 
 pip3 install pandas
 clear
@@ -76,7 +76,7 @@ if [[ $choice == "y" ]]; then
   #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
-  sudo apt install apache2
+  sudo apt install apache2 -y
   clear
   echo ""
   echo ""

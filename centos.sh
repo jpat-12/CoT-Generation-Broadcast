@@ -20,10 +20,10 @@ python3 --version
 
 # Install required packages
 echo "Installing Dependencies & needed Packages"
-sudo yum update
+sudo yum update -y
 sudo yum install unzip curl -y
-sudo yum install python3-pip 
-sudo yum install python3-pandas
+sudo yum install python3-pip -y
+sudo yum install python3-pandas -y
 sudo yum firewalld
 pip3 install pandas
 clear
@@ -76,7 +76,7 @@ if [[ $choice == "y" ]]; then
   #If Apache2/an eqivelent is not installed then install apache2 
 elif [[ $choice == "n" ]]; then  
   echo "Starting Apache2 Install" 
-  sudo yum install httpd
+  sudo yum install httpd -y
   clear
   sudo systemctl start httpd
   sudo systemctl enable httpd
@@ -195,8 +195,8 @@ if [[ $node == "y" ]]; then
   sudo yum update -y
   sudo yum install epel-release -y
   sudo yum install wget -y
-  sudo yum install nodejs
-  sudo yum install npm
+  sudo yum install nodejs -y
+  sudo yum install npm -y
   sudo npm install -g node-red
 
 
@@ -261,9 +261,8 @@ echo "Your Survey123 is now converted into node-red readable format"
 echo "The certs are now available at /opt && /opt/tak/certs/files"
 echo ""
 echo ""
-sleep 4
-echo "Press any key to continue" 
-read continue
+sleep 6
+
 
 clear
 cd /opt/cot-gen

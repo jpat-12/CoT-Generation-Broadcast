@@ -9,6 +9,10 @@ echo "Waiting for 10 seconds"
 sleep 10
 clear
 
+sudo yum install catimg -y
+sudo apt-get install catimg -y
+
+
 while true; do
     # Ask the user for the folder path
     read -p "Enter the path to the folder (or 'exit' to quit): " folder_path
@@ -82,6 +86,7 @@ for file in "${files[@]}"; do
     # Extract the file name from the path 
     file_name=$(basename "$file")
 
+    catimg $file
     # Display the current file and ask the user if they want to include it in the iconset
     read -p "Do you want to include the file '$file' in the iconset? (y/n): " include_file
 
