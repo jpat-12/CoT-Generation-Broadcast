@@ -18,11 +18,11 @@ cd /opt/cot-gen && ./script.sh
 
 ## Centos/RedHat Install ##
 ```bash
-sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast-TESTING.git && cd CoT-Generation-Broadcast-TESTING && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
+sudo yum install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x centos.sh && ./centos.sh && cd /opt/cot-gen
 ```
 ## Ubuntu/Debian Install ##
 ```bash
-sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast-TESTING.git && cd CoT-Generation-Broadcast-TESTING && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
+sudo apt install git && cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && chmod +x ubuntu.sh && ./ubuntu.sh && cd /opt/cot-gen
 ```
 
 ## Troubleshooting ##
@@ -50,5 +50,5 @@ cd /opt/tak/certs/files && openssl pkcs12 -clcerts -nokeys -in Survey123.p12 -ou
 sudo mkdir -p /opt/icons && git clone https://github.com/jpat-12/Incident-Icons.git /opt/icons
 ```
 ```bash
-cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast-TESTING.git && cd CoT-Generation-Broadcast-TESTING && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
+cd /tmp && git clone https://github.com/jpat-12/CoT-Generation-Broadcast.git && cd CoT-Generation-Broadcast && cd iconset && chmod +x iconset-gen.sh && ./iconset-gen.sh
 ```
