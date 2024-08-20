@@ -1,4 +1,7 @@
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/jpat)
+# THIS IS A DEPRECATED REOP 
+**[TAK-ESRI]([https://www.youtube.com/watch?v=eMRZVkyE-1U](https://github.com/jpat-12/TeamAwearnessKit-Esri-Integration))** <br /><br />
+
 # CoT-Generation from Survey123 Data #
 
 This script automates the installation of necessary dependencies and formats everything for COT-Generation from Survey123 Data.
